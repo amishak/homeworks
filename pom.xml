@@ -9,7 +9,7 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>homeworks</name>
-  <url>http://itacademykrakow.talentlms.com</url>
+  <url>https://itacademykrakow.talentlms.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
