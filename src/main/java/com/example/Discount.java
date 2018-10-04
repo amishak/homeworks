@@ -9,7 +9,7 @@ public class Discount {
         System.out.println("discount = " + getDiscount(70, false));
     }
 
-    private static int getDiscount(int age, boolean isVip) {
+    public static int getDiscount(int age, boolean isVip) {
         int discount = 0;
         if (age > 64) {
             discount = 10;
