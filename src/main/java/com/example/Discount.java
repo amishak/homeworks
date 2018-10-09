@@ -11,14 +11,14 @@ public class Discount {
 
     public static int getDiscount(int age, boolean isVip) {
         int discount = 0;
-        if (age > 64) {
-            discount = 10;
-        } else if (age < 18) {
-            discount = 25;
+        if (age > 50) {
+            discount = 15;
+        } else if (age < 25) {
+            discount = 20;
         }
 
         if (isVip) {
-            discount = discount + 5;
+            discount = discount + 10;
         }
 
         return discount;
