@@ -27,21 +27,18 @@ public class DiscountCounter {
                 int discount = Discount.getDiscount(age, !(vipCounter == 0));
     //            printing out
     //            System.out.println("age = " + age + "; discount = " + discount); // ctrl + /
-                if (discount == 0) {
-    //                discount_0_number = discount_0_number + 1;
-                    discount_0_number++;
-                } else if (discount == 5) {
-                    discount_5_number++;
-                } else if (discount == 10) {
-                    discount_10_number++;
-                } else if (discount == 15) {
-                    discount_15_number++;
-                } else if (discount == 25) {
-                    discount_25_number++;
-                } else if (discount == 30) {
-                    discount_30_number++;
-                } else {
-                    System.out.println("Unexpected discount!!! -> " + discount);
+                switch (discount) {
+                    case 0: {
+                        discount_0_number++;
+                        break;
+                    }
+                    case 5: discount_5_number++;
+                            break;
+                    case 10: discount_10_number++; break;
+                    case 15: discount_15_number++; break;
+                    case 25: discount_25_number++; break;
+                    case 30: discount_30_number++; break;
+                    default: System.out.println("Unexpected discount!!! -> " + discount); break;
                 }
             }
         }
