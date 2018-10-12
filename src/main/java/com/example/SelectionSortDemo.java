@@ -1,6 +1,6 @@
 package com.example;
 
-public class BubbleSortDemo {
+public class SelectionSortDemo {
 
     public static void main(String[] args) {
         int[] input = new int[7];
