@@ -16,9 +16,9 @@ public class Book {
         System.out.println("Book.getCounter() = " + Book.getCounter());
     }
 
-    /*
-    @title for book title
-    @author for book author
+    /**
+    @param title for book title
+    @param author for book author
      */
     public Book(String title, String author) {
         this(); // Book()
