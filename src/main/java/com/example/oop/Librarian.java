@@ -34,6 +34,6 @@ public class Librarian {
     }
 
     public void setTitle(String title, Book book) {
-
+        book.setTitle(title);
     }
 }
