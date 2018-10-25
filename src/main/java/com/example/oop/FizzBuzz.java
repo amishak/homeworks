@@ -1,6 +1,6 @@
 package com.example.oop;
 
-public class Printer {
+public class FizzBuzz {
 
     public static void main(String[] args) {
         for (int row = 0; row < 10; row++) {
