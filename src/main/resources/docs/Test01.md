@@ -22,3 +22,19 @@ Output: "a","a","b","b"
 
 Next task is enhance the program so each element is printed N times. N is defined in method main.
 
+
+# Test task 03
+
+Write a program that will count number of existing objects of given type.
+
+
+
+Example:
+
+new A();
+
+new A();
+
+will give result 2.
+
+Any time after creating new User you should know how many of them are exist in application.
