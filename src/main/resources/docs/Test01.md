@@ -38,3 +38,14 @@ new A();
 will give result 2.
 
 Any time after creating new User you should know how many of them are exist in application.
+
+
+# Test task 04
+
+You owner of restaurant.
+
+You have maximum 5 tables.
+
+Each table has orders, which consists from name of the dishes and their numbers.
+
+You need to realize datastructure to manage it.
