@@ -1,6 +1,8 @@
 package com.example.store;
 
-public class Person {
+import java.util.Objects;
+
+public abstract class Person {
     private String name;
     private String phone;
     protected static int id;
@@ -16,6 +18,10 @@ public class Person {
     }
 
     public String getName() {
+        return name + " " + getId();
+    }
+
+    public String getRealName() {
         return name;
     }
 
@@ -31,7 +37,27 @@ public class Person {
         this.phone = phone;
     }
 
-    public int getDiscount() {
-        return 25;
+    public abstract int getDiscount();
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(name, person.name) &&
+                Objects.equals(phone, person.phone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, phone);
     }
 }

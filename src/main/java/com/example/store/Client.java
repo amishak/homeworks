@@ -28,6 +28,14 @@ public class Client extends Person {
     }
 
     @Override
+    public String toString() {
+        return super.toString() + " Client{" +
+                "age=" + age +
+                ", vipStatus=" + vipStatus +
+                '}';
+    }
+
+    @Override
     public int getDiscount() {
         int discount = 0;
         if (age > 50) {
@@ -42,4 +50,6 @@ public class Client extends Person {
 
         return discount;
     }
+
+
 }
