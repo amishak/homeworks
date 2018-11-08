@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public abstract class Person {
     private String name;
+    private String surname;
     private String phone;
     protected static int id;
 
@@ -38,6 +39,12 @@ public abstract class Person {
     }
 
     public abstract int getDiscount();
+
+    public abstract String getSurname();
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
 
     @Override
     public String toString() {
