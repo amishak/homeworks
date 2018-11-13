@@ -2,7 +2,7 @@ package com.example.store;
 
 import java.util.Objects;
 
-public abstract class Person {
+public abstract class Person implements Discountable {
     private String name;
     private String surname;
     private String phone;
@@ -37,8 +37,6 @@ public abstract class Person {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-    public abstract int getDiscount();
 
     public abstract String getSurname();
 

@@ -1,6 +1,6 @@
 package com.example.store;
 
-public class Employee extends Person {
+public class Employee extends Person implements Discountable {
     private int salary;
 
     public Employee(String name, String phone, int salary) {
@@ -15,8 +15,8 @@ public class Employee extends Person {
     }
 
     @Override
-    public int getDiscount() {
-        return 25;
+    public String getSurname() {
+        return null;
     }
 
     public int getSalary() {

@@ -1,6 +1,6 @@
 package com.example.store;
 
-public class Client extends Person {
+public class Client extends Person implements Discountable {
 
     private int age;
     private boolean vipStatus;
@@ -49,6 +49,11 @@ public class Client extends Person {
         }
 
         return discount;
+    }
+
+    @Override
+    public String getSurname() {
+        return null;
     }
 
 
