@@ -19,11 +19,6 @@ public class Employee extends Person implements Discountable {
         return null;
     }
 
-    @Override
-    public String getSurname() {
-        return null;
-    }
-
     public int getSalary() {
         return salary;
     }

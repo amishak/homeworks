@@ -66,15 +66,4 @@ public class ExpandableArrayIntegerTest {
             assertEquals(Integer.valueOf(input[i]), list.get(i));
         }
     }
-
-    @Test
-    public void testList() {
-        List<String> list = new LinkedList<>();
-        list.add("Andrii");
-        list.add("empty");
-        System.out.println("list.size() = " + list.size());
-        list.clear();
-        System.out.println("list.size() = " + list.size());
-        System.out.println("list.isEmpty() = " + list.isEmpty());
-    }
 }
