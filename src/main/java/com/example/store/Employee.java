@@ -19,6 +19,11 @@ public class Employee extends Person {
         return 25;
     }
 
+    @Override
+    public String getSurname() {
+        return null;
+    }
+
     public int getSalary() {
         return salary;
     }

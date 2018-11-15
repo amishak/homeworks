@@ -51,5 +51,10 @@ public class Client extends Person {
         return discount;
     }
 
+    @Override
+    public String getSurname() {
+        return null;
+    }
+
 
 }
