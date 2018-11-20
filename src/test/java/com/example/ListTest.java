@@ -3,10 +3,60 @@ package com.example;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class ListTest {
+
+    @Test
+    public void testPrimitives() {
+        List<Integer> list = new ArrayList<>();
+        list.add(new Integer(1));
+        list.add(Integer.valueOf(2));
+        list.add(3);
+    }
+
+    @Test
+    public void testObjects() {
+        List<Object> list = new ArrayList<>();
+        list.add("name");
+        list.add(2);
+        list.add(new Object());
+        list.add(1, 5);
+        for (Object o : list) {
+            System.out.println(o.getClass().getName() + " -> " + o.toString());
+        }
+    }
+
+    @Test
+    public void testQueue() {
+        Queue<String> queue = new LinkedList<>();
+        System.out.println("queue.size() = " + queue.size());
+        boolean added = queue.offer("First");
+        System.out.println("added = " + added);
+        System.out.println("queue.size() = " + queue.size());
+        System.out.println("queue.peek() = " + queue.peek());
+        System.out.println("queue.size() = " + queue.size());
+        String value = queue.poll();
+        System.out.println("value = " + value);
+        System.out.println("queue.size() = " + queue.size());
+    }
+
+    @Test
+    public void testQueueTail() {
+        Deque<String> queue = new LinkedList<>();
+        System.out.println("queue.size() = " + queue.size());
+        boolean added = queue.offer("First");
+        System.out.println("added = " + added);
+        queue.add("Second");
+        System.out.println("queue.size() = " + queue.size());
+        System.out.println("queue.peek() = " + queue.peek());
+        System.out.println("queue.size() = " + queue.size());
+        String value = queue.poll();
+        System.out.println("value = " + value);
+        System.out.println("queue.size() = " + queue.size());
+        System.out.println("queue.poll() = " + queue.poll());
+        System.out.println("queue.size() = " + queue.size());
+    }
 
     @Test
     public void testListAdd() {
