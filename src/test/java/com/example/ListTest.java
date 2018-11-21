@@ -28,37 +28,6 @@ public class ListTest {
     }
 
     @Test
-    public void testQueue() {
-        Queue<String> queue = new LinkedList<>();
-        System.out.println("queue.size() = " + queue.size());
-        boolean added = queue.offer("First");
-        System.out.println("added = " + added);
-        System.out.println("queue.size() = " + queue.size());
-        System.out.println("queue.peek() = " + queue.peek());
-        System.out.println("queue.size() = " + queue.size());
-        String value = queue.poll();
-        System.out.println("value = " + value);
-        System.out.println("queue.size() = " + queue.size());
-    }
-
-    @Test
-    public void testQueueTail() {
-        Deque<String> queue = new LinkedList<>();
-        System.out.println("queue.size() = " + queue.size());
-        boolean added = queue.offer("First");
-        System.out.println("added = " + added);
-        queue.add("Second");
-        System.out.println("queue.size() = " + queue.size());
-        System.out.println("queue.peek() = " + queue.peek());
-        System.out.println("queue.size() = " + queue.size());
-        String value = queue.poll();
-        System.out.println("value = " + value);
-        System.out.println("queue.size() = " + queue.size());
-        System.out.println("queue.poll() = " + queue.poll());
-        System.out.println("queue.size() = " + queue.size());
-    }
-
-    @Test
     public void testListAdd() {
         List<String> list = new LinkedList<>();
         // put your code here
