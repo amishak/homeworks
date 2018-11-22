@@ -87,6 +87,7 @@ public class ListTest {
         List<String> listAgain = new LinkedList<>();
         listAgain.add("value again");
         // put your code here
+        list.addAll(listAgain);
         Assert.assertEquals(list.size(), 2);
     }
 
