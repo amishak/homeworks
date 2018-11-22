@@ -1,5 +1,6 @@
 package com.example;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.HashSet;
@@ -34,5 +35,30 @@ public class SetTest {
         for (String name : names) {
             System.out.println("name = " + name);
         }
+    }
+
+    @Test
+    public void testSetRemoveOrClear() {
+        Set<Integer> numbers = new HashSet<>();
+        numbers.add(2017);
+        numbers.add(2018);
+        numbers.add(2018);
+        // put your code here
+        Assert.assertTrue(numbers.isEmpty());
+    }
+
+    @Test
+    public void testSetAdd() {
+        Set<Integer> numbers = new HashSet<>();
+        numbers.add(2018);
+        // put your code here
+        Assert.assertTrue(numbers.size() == 2);
+    }
+
+    @Test
+    public void testSetContains() {
+        Set<Integer> numbers = new HashSet<>();
+        // put your code here
+        Assert.assertTrue(numbers.contains(2019));
     }
 }

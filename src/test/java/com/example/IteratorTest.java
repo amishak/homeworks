@@ -1,5 +1,6 @@
 package com.example;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.*;
@@ -33,6 +34,25 @@ public class IteratorTest {
         }
 
         System.out.println("cities = " + cities);
+
+    }
+
+    @Test
+    public void testIteratorInteger() {
+        Collection<Integer> numbers = new TreeSet<>();
+        for (int i = 0; i < 12; i++) {
+            numbers.add(i);
+        }
+        /*
+        //
+        // put you code here
+        //
+         */
+
+        for (int i : numbers) {
+            Assert.assertTrue(i % 2 == 0);
+        }
+
 
     }
 }

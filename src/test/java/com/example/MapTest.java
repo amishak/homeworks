@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class MapTest {
 
@@ -44,4 +45,16 @@ public class MapTest {
             System.out.println("entry = " + entry);
         }
     }
+
+    @Test
+    public void testMapValues() {
+        Map<Integer, Integer> mapping = new HashMap<>();
+        Random random = new Random();
+        for (int i = 0; i < 12; i++) {
+            mapping.put(i, random.nextInt(100));
+        }
+        // print all keys
+        // print all values
+    }
+
 }
