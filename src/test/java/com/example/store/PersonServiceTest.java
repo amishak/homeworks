@@ -34,4 +34,26 @@ public class PersonServiceTest {
         Assert.assertEquals(employee.getPhone(), returned.getPhone());
         Assert.assertEquals(employee.getRealName(), returned.getRealName());
     }
+
+    @Test
+    public void testUpdate() {
+        Client adam = new Client("Adam", "+48111111111", 44, false);
+        service.createClient(adam);
+        Assert.assertEquals(1, service.countPersons());
+        // you code here
+        Person returned = service.readPerson(adam.getPhone());
+        Assert.assertEquals("Noah", returned.getName());
+    }
+
+    @Test
+    public void testDelete() {
+        Assert.assertEquals(0, service.countPersons());
+        Client adam = new Client("Adam", "+48111111111", 44, false);
+        service.createClient(adam);
+        Assert.assertEquals(1, service.countPersons());
+        // you code here, delete absent person
+        Assert.assertEquals(1, service.countPersons());
+        // you code here
+        Assert.assertEquals(0, service.countPersons());
+    }
 }
