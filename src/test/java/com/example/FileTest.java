@@ -1,5 +1,6 @@
 package com.example;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.File;
@@ -13,7 +14,9 @@ import java.util.Scanner;
 
 public class FileTest {
 
-    private static final String FILE_PATH = "src\\main\\java\\com\\example\\docs\\Mickiewicz.txt";
+    private static String fileSeparator = System.getProperty("file.separator");
+    private static String FILE_PATH = "src" + fileSeparator + "main" + fileSeparator + "java" + fileSeparator
+    + "com" + fileSeparator + "example" + fileSeparator + "docs" + fileSeparator + "Mickiewicz.txt";
 
     @Test
     public void testReadFileByScanner() {
@@ -84,5 +87,20 @@ public class FileTest {
         }
         System.out.println("counter = " + counter);
         System.out.println("counterAll = " + counterAll);
+    }
+
+    @Test
+    public void testFindLongestLine() {
+        Path path = Paths.get(FILE_PATH);
+        String longestLine = null;
+        try {
+            List<String> lines = Files.readAllLines(path);
+            for (String line : lines) {
+                System.out.println("line = " + line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Assert.assertNotNull(longestLine);
     }
 }
