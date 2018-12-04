@@ -100,9 +100,11 @@ public class FileTest {
         String longestLine = null;
         try {
             List<String> lines = Files.readAllLines(path);
-            for (String line : lines) {
+            longestLine = lines.get(0);
+            for (int index = 1; index < lines.size(); index++) {
 //                System.out.println("line = " + line);
-                if (longestLine == null || longestLine.length() < line.length()) {
+                String line = lines.get(index);
+                if (longestLine.length() < line.length()) {
                     longestLine = line;
                 }
             }
@@ -121,23 +123,31 @@ public class FileTest {
         try {
             in = new Scanner(fileInput);
             while (in.hasNext()) {
-                String next = in.next();
-                if (dict.containsKey(next)) {
-                    int oldValue = dict.get(next);
-                    dict.put(next, ++oldValue);
+                String word = in.next().toLowerCase();
+                if (dict.containsKey(word)) {
+                    int oldValue = dict.get(word);
+                    dict.put(word, ++oldValue);
                 } else {
-                    dict.put(next, 1);
+                    dict.put(word, 1);
                 }
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } finally {
-            in.close();
+            if (in != null) {
+                in.close();
+            }
         }
 //        System.out.println("dict = " + dict);
-       /*for (Map.Entry<String, Integer> entry : dict.entrySet()) {
+        /*int counter = 0;
+       for (Map.Entry<String, Integer> entry : dict.entrySet()) {
             if (entry.getValue() > 1) {
-                System.out.println("entry = " + entry);
+                System.out.print(entry + " ");
+                counter++;
+                if (counter == 10) {
+                    counter = 0;
+                    System.out.println();
+                }
             }
        }*/
         List<Map.Entry<String, Integer>> entries = new ArrayList<>(dict.entrySet());
@@ -147,12 +157,20 @@ public class FileTest {
                 return o2.getValue() - o1.getValue();
             }
         };*/
-        /*MapsComparator comparator = new MapsComparator();
-        Collections.sort(entries, comparator);*/
+        /*MapsComparator comparator = new MapsComparator();*/
+        /*Collections.sort(entries, new Comparator<Map.Entry<String, Integer>>() {
+            @Override
+            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                return o2.getValue() - o1.getValue();
+            }
+        });*/
+//        System.out.println("entries = " + entries);
         Collections.sort(entries,
-                (o1, o2) -> o2.getValue() - o1.getValue()
+                (o1, o2) -> o1.getValue() - o2.getValue()
         );
-        System.out.println("most frequent word is [" + entries.get(0).getKey() + "]");
+        System.out.println("most frequent word is " + entries.get(entries.size() - 1).getKey());
+        System.out.println("most frequent word happens " + entries.get(entries.size() -1).getValue());
+//        System.out.println("most frequent word is [" + entries.get(0).getKey() + "]");*/
     }
 
     @Test
@@ -181,13 +199,13 @@ public class FileTest {
                 } else {
                     System.out.println("Directory is " + pathname);
                     File[] files = pathname.listFiles();
-//                    System.out.println(Arrays.asList(files));
-                    /*for (File f : files) {
+                    System.out.println(Arrays.asList(files));
+                    for (File f : files) {
                         System.out.println(f);
-                    }*/
-                    List<File> listOfFiles = Arrays.asList(files);
+                    }
+                    /*List<File> listOfFiles = Arrays.asList(files);
                     listOfFiles.forEach(System.out::println);
-                    System.out.println();
+                    System.out.println();*/
                 }
                 return false;
             }
