@@ -19,15 +19,17 @@ public class StreamsTest {
         Supplier<Integer> integerSupplier = () -> new Random().nextInt(100);
         Stream
                 .generate(integerSupplier)
+                .limit(10)
                 .forEach(System.out::println);
     }
 
-    @Ignore("till new year")
+    @Test
     public void testStreamSort() {
         List<String> listOfRandomStrings = Stream
                 .generate(() -> generateRandomString(new Random(), 9))
                 .peek(System.out::println)
                 .limit(25)
+                .sorted(Collections.reverseOrder())
                 .collect(Collectors.toList());
         List<String> toSort = new ArrayList<>(listOfRandomStrings);
         Collections.sort(toSort, Collections.reverseOrder());
@@ -40,8 +42,10 @@ public class StreamsTest {
     public void testFilterToCapitalize() {
         List<String> listOfRandomStrings = Stream
                 .generate(() -> generateRandomString(new Random(), 9))
-                .peek(System.out::println)
                 .limit(25)
+                .peek(System.out::println)
+                .filter(o -> o.substring(0,1)
+                        .equals(o.substring(0,1).toUpperCase()))
                 .collect(Collectors.toList());
         listOfRandomStrings.forEach(
                 o -> Assert.assertTrue(
@@ -56,8 +60,9 @@ public class StreamsTest {
         int capacity = 12;
         List<String> listOfRandomStrings = Stream
                 .generate(() -> generateRandomString(new Random(), 9))
-                .peek(System.out::println)
                 .limit(capacity)
+                .map(o -> o.substring(0, 1).toUpperCase())
+                .peek(System.out::println)
                 .collect(Collectors.toList());
         listOfRandomStrings.forEach(
                 o -> Assert.assertEquals(o + " is not capitalized",
